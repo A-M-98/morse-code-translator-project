@@ -1,3 +1,4 @@
+
 export const translateToMorse = (string) => {
     return string.toLowerCase().split(" ").map(morse => {
         if(morseCode[morse])
@@ -7,7 +8,9 @@ export const translateToMorse = (string) => {
             return morse;
         }
      }).join(" ");
+
 };
+
 
 const morseCode = {
     "a": ".-",
@@ -56,4 +59,3 @@ const morseCode = {
     "@": ".--.-.",
     "!": "-.-.--"
 };
-

@@ -1,4 +1,4 @@
-import { translateToMorse } from "./translator";
+import { translateToMorse } from "./translator.js";
 
 describe('Testing translateToMorse', () => {
   it("a should translate to be .-", ()=> {

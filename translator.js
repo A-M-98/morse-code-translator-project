@@ -1,12 +1,25 @@
-let inputText = document.querySelector("#input-english").value;
-let outputCode = document.querySelector("#output-code").value = translatedCode;
 const button = document.querySelector("#translator");
 
 export const translateToMorse = (string) => {
+    let inputText = document.querySelector("#input-english").value;
+    string = inputText.toLowerCase();
+    let firstArray = string.split("");
+    let secondArray = firstArray.map(morse => {
+        if(morseCode[morse])
+            {
+                return morseCode[morse];
+            } else {
+                return morse;
+            }
 
+    });
+
+    let translatedCode = secondArray.join(" ");
+    document.querySelector("#output-code").value = translatedCode;
 
 };
 
+button.addEventListener("click", translateToMorse);
 
 const morseCode = {
     "a": ".-",

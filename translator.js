@@ -1,9 +1,6 @@
-const button = document.querySelector("#translator");
-
 export const translateToMorse = (string) => {
-    let inputText = document.querySelector("#input-english").value;
-    string = inputText.toLowerCase();
-    let firstArray = string.split("");
+    let word = string.toLowerCase();
+    let firstArray = word.split("");
     let secondArray = firstArray.map(morse => {
         if(morseCode[morse])
             {
@@ -14,12 +11,9 @@ export const translateToMorse = (string) => {
 
     });
 
-    let translatedCode = secondArray.join(" ");
-    document.querySelector("#output-code").value = translatedCode;
-
+    return secondArray.join(" ");
 };
 
-button.addEventListener("click", translateToMorse);
 
 const morseCode = {
     "a": ".-",
@@ -43,7 +37,8 @@ const morseCode = {
     "s": "...",
     "t": "-",
     "u": "..-",
-    "v": ".--",
+    "v": "...-",
+    "w": ".--",
     "x": "-..-",
     "y": "-.--",
     "z": "--..",
@@ -66,14 +61,12 @@ const morseCode = {
     "+": ".-.-.",
     "-": "-....-",
     "@": ".--.-.",
-    "!": "-.-.--"
-};
+    ":": "---...",
+    "=": "-...-",
+    "(": "-.--.",
+    ")": "-.--.-",
+    "&": ".-...",
+    ";": "-.-.-.",
+    "!": "-.-.--",
 
-// return string.toLowerCase().split(" ").map(morse => {
-//     if(morseCode[morse])
-//     {
-//         return morseCode[morse];
-//     } else {
-//         return morse;
-//     }
-//  }).join(" ");
+};

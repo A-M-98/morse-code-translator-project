@@ -38,6 +38,7 @@ describe('Testing translateToMorse', () => {
       string = "HELLO";
       let result = translateToMorse(string)
     // Assert
+    console.log(result);
     expect(result).toBe(".... . .-.. .-.. ---");
   });
 
